@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect, render_template_string
 import sqlite3
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 def get_db():
     return sqlite3.connect("employee.db")
@@ -80,5 +80,5 @@ def delete(id):
     con.close()
     return redirect("/")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
